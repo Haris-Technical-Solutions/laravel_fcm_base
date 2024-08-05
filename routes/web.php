@@ -3,6 +3,9 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\FirebaseAuthController;
 
+
+use App\Http\Controllers\JasperController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,6 +38,9 @@ Route::middleware('auth')->group(function () {
 
     Route::post('/store_fcm', [FirebaseAuthController::class, 'store_fcm']);
 
+
+
 });
+Route::get('jasper/report/{name}/{ext?}', [JasperController::class, 'report']);
 
 require __DIR__.'/auth.php';
